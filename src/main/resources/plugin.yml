@@ -4,4 +4,4 @@ main: thedavid.antiafk.AntiAFK
 api-version: '1.20'
 commands:
   I'mNot_AFK:
-    usage: "/I'mNot_AFK"
+    usage: "/I'mNot_AFK [密碼]"
