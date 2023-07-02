@@ -42,7 +42,6 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         Bukkit.getPluginManager().registerEvents(this, this);
         if (Bukkit.getPluginCommand("i'mnot_afk") != null) {
             Bukkit.getPluginCommand("i'mnot_afk").setExecutor(this);
