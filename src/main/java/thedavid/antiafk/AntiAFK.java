@@ -17,14 +17,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
 import java.util.*;
 
 public final class AntiAFK extends JavaPlugin implements Listener, CommandExecutor {
     Map<Player,Integer> playerTime = new HashMap<>();
     Map<Player,Boolean> playerNeedToClick = new HashMap<>();
     Map<Player,Integer> playerRandomCommand = new HashMap<>();
-    public final Integer detectAFKTime = 300;
+    public final Integer detectAFKTime = 600;
     public final Integer minPlayer = 20;
     List<NamedTextColor> colors = Arrays.asList(
             NamedTextColor.AQUA,
@@ -75,7 +74,7 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
                         p.sendMessage(Component.text("---------------------"));
                         playerNeedToClick.put(p, true);
                     }
-                    if(Objects.equals(playerNeedToClick.get(p), true) && playerTime.get(p) >= 30){
+                    if(Objects.equals(playerNeedToClick.get(p), true) && playerTime.get(p) >= detectAFKTime + 120){
                         p.kick();
                     }
                 });
