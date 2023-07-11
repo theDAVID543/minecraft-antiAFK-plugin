@@ -82,6 +82,8 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
                             @Override
                             public void run() {
                                 if(Bukkit.getOnlinePlayers().contains(p) && playerNeedToClick.get(p).equals(true)){
+                                    Random rand = new Random();
+                                    int randomColor = rand.nextInt(colors.size());
                                     p.sendMessage(Component.text("                                                               ").decoration(TextDecoration.STRIKETHROUGH, true));
                                     p.sendMessage(
                                             Component.text("我們偵測到您正在掛機 請於 ").color(NamedTextColor.RED)
