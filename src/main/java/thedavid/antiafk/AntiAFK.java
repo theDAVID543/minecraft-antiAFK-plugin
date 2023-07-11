@@ -49,11 +49,12 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
         if (Bukkit.getPluginCommand("i'mnot_afk") != null) {
             Bukkit.getPluginCommand("i'mnot_afk").setExecutor(this);
         }
+//      此區域 每20刻=1秒 執行一次
         new BukkitRunnable() {
             @Override
             public void run() {
                 Bukkit.getServer().getOnlinePlayers().forEach(p -> {
-//                    玩家在線時間 +1
+//                  此函數為玩家在線時間 +1
                     playerTime.putIfAbsent(p,0);
                     playerTime.put(p,playerTime.get(p) + 1);
 //                    玩家人數 >= minPlayer && 玩家在線時間 >= detectAFKTime
