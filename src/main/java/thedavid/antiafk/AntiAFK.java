@@ -77,6 +77,7 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
                         );
                         p.sendMessage(Component.text("                                                               ").decoration(TextDecoration.STRIKETHROUGH, true));
                         playerNeedToClick.put(p, true);
+                        playerTime.put(p, detectAFKTime);
                         playerClickLeftTIme.put(p, 90);
                         new BukkitRunnable(){
                             @Override
