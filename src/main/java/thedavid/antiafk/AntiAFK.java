@@ -26,8 +26,8 @@ public final class AntiAFK extends JavaPlugin implements Listener, CommandExecut
     Map<Player,Boolean> playerNeedToClick = new HashMap<>();
     Map<Player,Integer> playerRandomCommand = new HashMap<>();
     Map<Player,Integer> playerClickLeftTIme = new HashMap<>();
-    public final Integer detectAFKTime = 30;
-    public final Integer minPlayer = 1;
+    public final Integer detectAFKTime = 300;
+    public final Integer minPlayer = 20;
     List<NamedTextColor> colors = Arrays.asList(
             NamedTextColor.AQUA,
             NamedTextColor.BLACK,
